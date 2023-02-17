@@ -5,8 +5,8 @@ $conn = new PDO('mysql:host=localhost;dbname=cafteria', 'root','');
 
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = "INSERT INTO user (username,email,password,room,is_admin,)
-VALUES ('$_POST[username]','$_POST[email]','$_POST[pswd]','$_POST[room]','$_POST[admin]','$_POST[file]')";
+$sql = "INSERT INTO user (username,email,password,room,is_admin)
+VALUES ('$_POST[username]','$_POST[email]','$_POST[pswd]','$_POST[room]','$_POST[admin]')";
   $conn->exec($sql);
 
 
