@@ -10,8 +10,11 @@ VALUES ('$_POST[product]','$_POST[price]','$_POST[category]')";
 
   $conn->exec($sql);
 
+
+  header('Location: listproducts.php');
+
  
-  echo "New record created successfully";
+  // echo "New record created successfully";
 } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }

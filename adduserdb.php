@@ -10,9 +10,9 @@ VALUES ('$_POST[username]','$_POST[email]','$_POST[pswd]','$_POST[room]','$_POST
   $conn->exec($sql);
 
 
-  //  header('Location: allUsers.php');
+    header('Location: allUsers.php');
 
-  echo "New record created successfully";
+  // echo "New record created successfully";
 } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
   }
