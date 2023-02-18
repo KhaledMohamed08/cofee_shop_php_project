@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+     <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Checks</title>
+
+    <style>
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    background-image: url("./images/back.jpg");
+    color: rgb(158, 115, 51);
+  }
+
+body {
+    background-color: #faf9f4;
+    font-family: 'Tajawal', sans-serif;
+    /* padding-top: 20px; */
+    color: rgb(19, 15, 5);
+
+}
+
+.container{
+    color: navajowhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    /* max-width: unset; */
+
+}
+.myform{
+
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(19, 15, 5);
+
+}
+
+#table-head{
+    text-align: center;
+    background-color: rgb(19, 15, 5);
+    color: navajowhite;
+    font-size: 1.3rem;
+}
+
+.item-tab{
+    text-align: center;
+}
+
+.order-details{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border: 8px #606064 solid;
+}
+.date-from-to{
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    width: 100%;
+    color :#fff;
+}
+
+.date-from{
+    margin-right: 10px;
+
+}
+
+.input-container-user{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    width: 100%;
+     margin-left: 10px;
+    /*margin-bottom: 10px; */
+}
+
+.input-container-user label{
+    margin-right: 25px;
+    color: #fff;
+}
+
+.input-user{
+    flex-basis: 80%;
+
+}
+
+.input-user select{
+    font-size: 16px;
+    text-align: center;
+    width: max-content;
+
+}
+
+.find-outer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.find-inner input{
+    width: 5rem;
+}
+.buttonStyle {
+  background-color: rgb(19, 15, 5);
+  color: navajowhite;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  margin: 10px;
+  margin-top: 37px;
+}
+
+/* .user {
+
+    margin: 10px;
+    padding: 10px;
+    background-color: #f3f1e4;
+} */
+
+.order {
+    /* background: #999; */
+    padding: 10px;
+
+    margin: 10px;
+}
+
+.item-card {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+.btn-primary{
+    background-color: #f3f1e4;
+    border-color: #f3f1e4;
+    color: rgb(19, 15, 5);
+    margin-top: 27px;
+}
+.item-img img{
+    width: 75px;
+
+}
+.table-head {
+    border: 1px solid rgb(110, 87, 28);
+    margin-bottom:5px;
+}
+
+
+        </style>
+
+
+</head>
+
+<body>
+
+
+
+    <!-- ********************* -->
+
+
+    <div class="container">
+
+        <div>
+            <form  method="get" class="myform">
+                <div class="date-from-to">
+                    <div class="date-from">
+                        <label for="" class=" control-label"> From <i class="fa fa-calendar"
+                                aria-hidden="true"></i></label>
+                        <div class="">
+                            <input type="date" name="from" value="<?=$from?>" class="form-control">
+                        </div>
+                    </div>
+                    <div class="date-to">
+                        <label for="" class=" control-label"> To <i class="fa fa-calendar"
+                                aria-hidden="true"></i></label>
+                        <div class="">
+                            <input type="date" name="to" value="<?=$to?>" class="form-control">
+                        </div>
+                    </div>
+                    <div class="input-container-user">
+                        <label for="" class=" control-label"> users</label>
+                        <div class="input-user">
+                            <select class="form-control" name="user_id" id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="find-outer">
+                        <input type="submit" value="Find" class=" buttonStyle" >
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+
+        <div class="container2">
+
+            <div class="row">
+                <span id='table-head' class="col-md-6 table-head"> Client </span>
+                <span id='table-head' class="text-center col-md-6 table-head">Total Amount</span>
+  
+
+                <div id="userid" class="col-md-12 user">
+
+                    <div class="row">
+                        <span class="text-left col-md-6 item-tab">
+                            <i class='fa fa-plus' ></i>
+                            </span>
+                        <span class="text-center col-md-6"></span>
+
+                    </div>
+                    <div id="toggel-userid" style="display:none" class="row order user-list">
+                        <span id='table-head' class=" col-md-6 table-head"> Order Date </span>
+                        <span id='table-head' class="text-center col-md-6 table-head"> Amount</span>
+                        <div id="orderid" class=" col-md-12">
+                            <div class="row ">
+
+                                <span class="text-left col-md-6">
+
+                                    <i class='fa fa-plus'></i>
+                                </span>
+                                <span class="text-center col-md-6"> </span>
+
+                            </div>
+
+                            <div class='order-details' id="toggel-orderid>" style="display:none">
+
+                 <div class="item-card">
+                                    <div>
+                                        <div class='item-img'>
+                                        </div>
+                                        <div class='item-name'></div>
+                                        <div class='item-price'> </div>
+                                        <div class='item-quantity'></div>
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+
+
